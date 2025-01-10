@@ -17,6 +17,7 @@ public class AppointmentMapper {
         appointment.setPatientEmail(request.getPatientEmail());
         appointment.setReason(request.getReason());
         return appointment;
+
     }
 
 //    public AppointmentResponse mapToAppointmentResponse(Appointment appointment) {
