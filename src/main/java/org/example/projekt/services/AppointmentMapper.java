@@ -2,6 +2,7 @@ package org.example.projekt.services;
 
 import org.example.projekt.models.Appointment;
 import org.example.projekt.models.AppointmentRequest;
+import org.example.projekt.models.AppointmentResponse;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +16,10 @@ public class AppointmentMapper {
         appointment.setReason(request.getReason());
         return appointment;
     }
+
+//    public AppointmentResponse mapToAppointmentResponse(Appointment updatedAppointment) {
+//        return appointment;
+//    }
 
 //    public AppointmentResponse mapToAppointmentResponse(Appointment appointment) {
 //        return new AppointmentResponse(
