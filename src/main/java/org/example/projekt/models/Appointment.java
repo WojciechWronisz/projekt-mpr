@@ -3,8 +3,12 @@ package org.example.projekt.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -13,7 +17,6 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Appointment {
     @Id
     @UuidGenerator
@@ -25,5 +28,5 @@ public class Appointment {
     private String reason;
 
     @ManyToOne
-    private Doctor doctor;
+    private Doctor doctor; // Relacja z lekarzem
 }
