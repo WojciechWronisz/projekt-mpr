@@ -2,10 +2,7 @@ package org.example.projekt.services;
 
 import org.example.projekt.models.Appointment;
 import org.example.projekt.models.AppointmentRequest;
-import org.example.projekt.models.AppointmentResponse;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDateTime;
 
 @Component
 public class AppointmentMapper {
@@ -17,8 +14,6 @@ public class AppointmentMapper {
         appointment.setPatientEmail(request.getPatientEmail());
         appointment.setReason(request.getReason());
         return appointment;
-
-
     }
 
 //    public AppointmentResponse mapToAppointmentResponse(Appointment appointment) {

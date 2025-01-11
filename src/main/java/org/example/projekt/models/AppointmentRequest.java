@@ -1,7 +1,6 @@
 package org.example.projekt.models;
 
 import lombok.Data;
-
 import java.time.LocalDateTime;
 
 @Data

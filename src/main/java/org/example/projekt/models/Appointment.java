@@ -5,7 +5,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 

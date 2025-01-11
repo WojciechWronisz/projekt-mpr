@@ -1,11 +1,9 @@
 package org.example.projekt.models;
 
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.print.Doc;
 import java.time.LocalDateTime;
 
 @Getter
