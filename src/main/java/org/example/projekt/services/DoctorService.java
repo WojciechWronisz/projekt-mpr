@@ -1,7 +1,9 @@
 package org.example.projekt.services;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.example.projekt.models.Doctor;
 import org.example.projekt.models.DoctorRequest;
 import org.example.projekt.workshop.DoctorRepository;
@@ -12,6 +14,9 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Getter
+@Setter
+
 public class DoctorService {
     private final DoctorRepository doctorRepository;
     private final DoctorMapper doctorMapper; // MapStruct mapper

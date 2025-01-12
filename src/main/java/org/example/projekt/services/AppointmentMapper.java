@@ -14,6 +14,7 @@ public interface AppointmentMapper {
     Appointment mapToAppointment(AppointmentRequest request);
 
     // Mapowanie Appointment -> AppointmentResponse
+    @Mapping(source = "id", target = "id") // Mapowanie ID
     @Mapping(source = "doctor.firstName", target = "doctorFirstName")
     @Mapping(source = "doctor.lastName", target = "doctorLastName")
     AppointmentResponse mapToAppointmentResponse(Appointment appointment);

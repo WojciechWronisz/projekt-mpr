@@ -7,22 +7,25 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Patient {
+
     @Id
     private UUID id;
+
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient") // "patient" musi istnieć w klasie Appointment
     private List<Appointment> appointments;
 }

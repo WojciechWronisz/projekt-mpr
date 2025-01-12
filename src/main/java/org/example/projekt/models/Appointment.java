@@ -1,25 +1,21 @@
 package org.example.projekt.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.UuidGenerator;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-
 @Entity
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Appointment {
+
     @Id
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.AUTO) // Automatyczne generowanie UUID
     private UUID id;
 
     private LocalDateTime dateTime;
@@ -28,5 +24,8 @@ public class Appointment {
     private String reason;
 
     @ManyToOne
-    private Doctor doctor; // Relacja z lekarzem
+    private Doctor doctor; // Relacja z klasą Doctor
+
+    @ManyToOne
+    private Patient patient; // Relacja z klasą Patient
 }

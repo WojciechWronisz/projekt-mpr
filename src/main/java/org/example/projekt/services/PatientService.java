@@ -1,7 +1,9 @@
 package org.example.projekt.services;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.example.projekt.models.Patient;
 import org.example.projekt.models.PatientRequest;
 import org.example.projekt.workshop.PatientRepository;
@@ -9,7 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
-
+@Getter
+@Setter
 @Service
 @RequiredArgsConstructor
 public class PatientService {

@@ -13,6 +13,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 public class AppointmentController {
+
     private final AppointmentService appointmentService;
 
     @GetMapping("/appointments")

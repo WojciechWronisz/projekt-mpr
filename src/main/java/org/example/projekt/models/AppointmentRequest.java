@@ -1,8 +1,13 @@
 package org.example.projekt.models;
 
-import lombok.Data;
-import java.time.LocalDateTime;
+import lombok.*;
 
+
+import java.time.LocalDateTime;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class AppointmentRequest {
     private String patientName;
