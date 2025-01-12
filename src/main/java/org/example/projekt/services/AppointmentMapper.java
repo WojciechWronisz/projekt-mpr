@@ -6,6 +6,9 @@ import org.example.projekt.models.AppointmentResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+//Mapowanie służy do konwersji danych między różnymi warstwami aplikacji,
+// np. z DTO (Data Transfer Object) do encji bazy danych.
+
 @Mapper(componentModel = "spring")
 public interface AppointmentMapper {
 

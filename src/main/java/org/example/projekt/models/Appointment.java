@@ -16,7 +16,8 @@ import java.util.UUID;
 public class Appointment {
 
 
-    //na sile wstawione Derived Query Methods
+    //na sile wstawione Derived Query Methods chodzi o to ze
+    // Spring sam wygeneruje odpowiedni kod SQL do wyszukiwania danych.
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // Automatyczne generowanie UUID

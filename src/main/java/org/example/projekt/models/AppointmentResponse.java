@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+
+// służy do reprezentowania danych zwracanych do klienta
+// (np. frontendu) po przetworzeniu żądania w aplikacji
 public class AppointmentResponse {
     private String id; // UUID konwertowany na String
     private LocalDateTime dateTime;

@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+// Służy do reprezentowania danych przesyłanych od klienta
+// podczas tworzenia lub aktualizacji wizyty w aplikacji.
+// jest to Data Transfe Object,
 public class AppointmentRequest {
     private String patientName;
     private String patientEmail;
@@ -16,12 +19,4 @@ public class AppointmentRequest {
     private LocalDateTime dateTime;
     private String doctorId;
 
-    public Appointment toEntity() {
-        return Appointment.builder()
-                .patientName(patientName)
-                .patientEmail(patientEmail)
-                .reason(reason)
-                .dateTime(dateTime)
-                .build();
-    }
 }

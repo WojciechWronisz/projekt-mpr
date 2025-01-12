@@ -21,40 +21,41 @@ public class DoctorService {
     private final DoctorRepository doctorRepository;
     private final DoctorMapper doctorMapper; // MapStruct mapper
 
-    /**
-     * Pobiera listę wszystkich lekarzy.
-     * @return lista obiektów Doctor
-     */
+//
+//      Pobiera listę wszystkich lekarzy.
+//      @return lista obiektów Doctor
+//
     public List<Doctor> getAllDoctors() {
         return doctorRepository.findAll();
     }
 
-    /**
-     * Pobiera lekarza na podstawie ID.
-     * @param id identyfikator lekarza
-     * @return obiekt Doctor
-     */
+//
+//      Pobiera lekarza na podstawie ID.
+//      @param id identyfikator lekarza
+//      @return obiekt Doctor
+//
+
     public Doctor getDoctorById(UUID id) {
         return doctorRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Doctor not found with ID: " + id));
     }
 
-    /**
-     * Dodaje nowego lekarza.
-     * @param doctorRequest dane wejściowe lekarza
-     * @return zapisany obiekt Doctor
-     */
+//
+//      Dodaje nowego lekarza.
+//      @param doctorRequest dane wejściowe lekarza
+//      @return zapisany obiekt Doctor
+//
     public Doctor addDoctor(DoctorRequest doctorRequest) {
         Doctor doctor = doctorMapper.mapToDoctor(doctorRequest);
         return doctorRepository.save(doctor);
     }
 
-    /**
-     * Aktualizuje dane lekarza na podstawie ID.
-     * @param id identyfikator lekarza
-     * @param doctorRequest dane do aktualizacji
-     * @return zaktualizowany obiekt Doctor
-     */
+//
+//      Aktualizuje dane lekarza na podstawie ID.
+//      @param id identyfikator lekarza
+//      @param doctorRequest dane do aktualizacji
+//      @return zaktualizowany obiekt Doctor
+//
     public Doctor updateDoctor(UUID id, DoctorRequest doctorRequest) {
         Doctor existingDoctor = doctorRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Doctor not found with ID: " + id));
@@ -69,10 +70,11 @@ public class DoctorService {
         return doctorRepository.save(existingDoctor);
     }
 
-    /**
-     * Usuwa lekarza na podstawie ID.
-     * @param id identyfikator lekarza
-     */
+//
+//      Usuwa lekarza na podstawie ID.
+//      @param id identyfikator lekarza
+//
+
     public void deleteDoctor(UUID id) {
         if (!doctorRepository.existsById(id)) {
             throw new EntityNotFoundException("Doctor not found with ID: " + id);
