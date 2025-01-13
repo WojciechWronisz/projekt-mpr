@@ -20,7 +20,7 @@ public class AppointmentService {
     // Pobranie wszystkich wizyt
     public List<AppointmentResponse> getAllAppointments() {
         return appointmentRepository.findAll()
-                .stream()
+                .stream() //potrzebne zeby mapowanie dzialalo
                 .map(appointmentMapper::mapToAppointmentResponse) // Mapowanie za pomocą MapStruct
                 .toList();
     }
@@ -59,10 +59,15 @@ public class AppointmentService {
         existingAppointment.setPatientEmail(updatedAppointmentRequest.getPatientEmail());
         existingAppointment.setReason(updatedAppointmentRequest.getReason());
 
-        // Zapisz zmiany w bazie
+        // Zapis zmiany w bazie
         Appointment updatedAppointment = appointmentRepository.save(existingAppointment);
 
         // Zwróć zaktualizowany obiekt jako response
         return appointmentMapper.mapToAppointmentResponse(updatedAppointment);
     }
+//    public List<Appointment> findAllByDoctorId(UUID doctorId) {
+//    return appointmentRepository.findAllByDoctorId(doctorId);
+//    }
+
 }
+

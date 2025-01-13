@@ -11,15 +11,14 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Builder //tworzy metode build
 @Table(name = "appointments") // Nazwa tabeli w bazie danych
 public class Appointment {
 
-
     //na sile wstawione Derived Query Methods chodzi o to ze
-    // Spring sam wygeneruje odpowiedni kod SQL do wyszukiwania danych.
-
-    @Id
+    //Spring sam wygeneruje odpowiedni kod SQL do wyszukiwania danych.
+    //nullable to taka jakby walidacja
+    @Id //autoinkrementacja
     @GeneratedValue(strategy = GenerationType.AUTO) // Automatyczne generowanie UUID
     private UUID id;
 

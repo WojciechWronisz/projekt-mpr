@@ -11,11 +11,12 @@ import lombok.Setter;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
+@Entity //mapowanie obiektow na tabele
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor //taki getter ale nie musze podawac first name itp
+@AllArgsConstructor // jak dostane requesta zeby dodac do bazy danych nowy obiekt
+                    // to dizeki temu musze napisac te wszystkie rzeczy
 public class Patient {
 
     @Id
